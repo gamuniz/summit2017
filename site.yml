@@ -13,7 +13,7 @@
 #      group: test
       instance_tags:
           Name: new_test
-      assign_public_ip: yes
+#      assign_public_ip: yes
       exact_count: 1
       region: us-west-2
       count_tag: gabe
