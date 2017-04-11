@@ -1,0 +1,17 @@
+---
+
+- hosts: localhost
+  connection: local
+  tasks:
+  
+  - name: provision a single ec2 instance
+    ec2:
+      key_name: gabemuniz
+      instance_type: t2.micro
+      image: ami-6f68cf0f
+      wait: yes
+      group: test
+      instance_tags:
+          Name: new_test
+      assign_public_ip: yes
+      exact_count: 1
