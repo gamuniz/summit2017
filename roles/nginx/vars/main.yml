@@ -5,5 +5,5 @@ nginx_packages:
   - python-devel
   - gcc
 
-nginx_test_message: This is a test message 
+nginx_test_message: "Hooray!"
 nginx_keepalive_timeout: 115
