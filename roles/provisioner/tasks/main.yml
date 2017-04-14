@@ -1,8 +1,6 @@
 ---
 - name: search for the latest rhel 7 AMI
   ec2_ami_find:
-    aws_access_key: "{{ec2_access_key}}"
-    aws_secret_key: "{{ec2_secret_key}}"
     region: "{{ec2_region}}"
     owner: "309956199498"
     name: "RHEL-7.3*"
@@ -10,8 +8,6 @@
 
 - name: find a subnet ID
   ec2_vpc_subnet_facts:
-    aws_access_key: "{{ec2_access_key}}"
-    aws_secret_key: "{{ec2_secret_key}}"
     region: "{{ec2_region}}"
   register: subnet_ids 
 
@@ -19,8 +15,6 @@
   ec2_group:
     name: example
     description: "security 4 lyfe"
-    aws_access_key: "{{ec2_access_key}}"
-    aws_secret_key: "{{ec2_secret_key}}"
     region: "{{ec2_region}}"
     vpc_id: "{{subnet_ids.subnets[0].vpc_id}}"
     rules:
@@ -36,8 +30,6 @@
 
 - name: launch an ec2 instance
   ec2:
-    aws_access_key: "{{ec2_access_key}}"
-    aws_secret_key: "{{ec2_secret_key}}"
     region: "{{ec2_region}}"
     instance_type: "{{ec2_instance_type}}"
     image: "{{find_results.results[0].ami_id}}"
