@@ -1,0 +1,9 @@
+---
+nginx_packages:
+  - nginx 
+  - python-pip
+  - python-devel
+  - gcc
+
+nginx_test_message: "Hooray!"
+nginx_keepalive_timeout: 115
