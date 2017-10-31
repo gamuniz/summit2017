@@ -1,8 +1,0 @@
----
-- name: configure nginx
-  hosts: "{{myGroup}}"
-  remote_user: ec2-user
-  become: yes
-
-  roles: 
-  - nginx
